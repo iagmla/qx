@@ -358,7 +358,7 @@ int qx_hmac_file_read_verify_offset(char *filename, uint8_t *key, int offset) {
     fseek(infile, 0, SEEK_END);
     uint64_t datalen = ftell(infile);
     fseek(infile, 0, 0);
-    uint64_t mac_pos = datalen - 32;
+    uint64_t mac_pos = datalen - 32 - offset;
     datalen = datalen - 32;
     fseek(infile, mac_pos, 0);
     uint64_t pos = ftell(infile);
