@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
     uint8_t digest[32];
     qx_hash_file(infile_name, digest);
     for (int i = 0; i < 32; i++) {
-        printf("%02X", digest[i]);
+        printf("%02x", digest[i]);
     }
     printf("    %s\n", infile_name);
 }
